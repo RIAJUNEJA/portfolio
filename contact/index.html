@@ -17,20 +17,21 @@
 
     <h1>Contact Me</h1>
 
-    <form action="mailto:rjuneja@ucsd.edu" method="POST" enctype="text/plain">
+    <form action="mailto:rjuneja@ucsd.edu" method="GET" enctype="text/plain">
         <label for="email">Email:</label>
-        <input type="email" id="rjuneja@ucsd.edu" name="email">
+        <input type="email" id="email" name="email" autocomplete="email" required>
         <br><br>
-
+      
         <label for="subject">Subject:</label>
-        <input id="subject" name="subject">
+        <input type="text" id="subject" name="subject" autocomplete="on" required>
         <br><br>
-
+      
         <label for="body">Message:</label>
-        <textarea id="body" name="body" rows="5" cols="30"></textarea>
+        <textarea id="body" name="body" rows="5" cols="30" required></textarea>
         <br><br>
-
-        <button>Send</button>
-    </form>
+      
+        <button type="submit">Send</button>
+      </form>
+      
 </body>
 </html>
