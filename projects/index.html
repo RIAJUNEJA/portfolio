@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            max-width: 100ch;
+            margin-inline: max(1em, (100% - 100ch) / 2);
+            padding: 1em;
+        }
+    </style>
 </head>
 <body>
     <title>Projects</title>
@@ -11,11 +18,11 @@
     .projects>article*12>h2>lorem4^img[src="https://vis-society.github.io/labs/2/images/empty.svg"]+p>lorem
 
     <nav style="display: flex; border-bottom: 1px solid oklch(80% 3% 200); margin-bottom: 1em;">
-        <a href="../index.html">Home</a>
-        <a href="index.html" class="current">Projects </a> 
-        <a href="../contact/index.html">Contact</a>
-        <a href="../cv/index.html">CV</a> 
-        <a href="https://github.com/riajuneja" target="_blank">GitHub</a>
+        <a href="../index.html" style="flex: 1; text-decoration: none; color: inherit; text-align: center; padding: 0.5em;">Home</a>
+        <a href="index.html" class="current" style="flex: 1; text-decoration: none; color: inherit; text-align: center; padding: 0.5em; border-bottom: 0.4em solid oklch(80% 3% 200); padding-bottom: 0.2em;">Projects </a> 
+        <a href="../contact/index.html" style="flex: 1; text-decoration: none; color: inherit; text-align: center; padding: 0.5em;">Contact</a>
+        <a href="../cv/index.html" style="flex: 1; text-decoration: none; color: inherit; text-align: center; padding: 0.5em;">CV</a> 
+        <a href="https://github.com/riajuneja" target="_blank" style="flex: 1; text-decoration: none; color: inherit; text-align: center; padding: 0.5em;">GitHub</a>
     </nav>
     
 </body>
