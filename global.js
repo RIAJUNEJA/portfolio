@@ -6,10 +6,9 @@ function $$(selector, context = document) {
 
 let pages = [
   { url: '', title: 'Home' },
-  { url: 'projects/', title: 'Projects' },
-  { url: 'contact/', title: 'Contact' },
-  { url: 'resume/', title: 'Resume' },
-  // Add the rest of your pages here
+  { url: 'projects/index.html', title: 'Projects' },
+  { url: 'contact/index.html', title: 'Contact' },
+  { url: 'resume/index.html', title: 'Resume' },
 ];
 
 let nav = document.createElement('nav');
@@ -18,20 +17,20 @@ document.body.prepend(nav);
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 for (let p of pages) {
-    let url = p.url;
-    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
-        // if (!ARE_WE_HOME && !url.startsWith('http')) {
-        //     url = '../' + url; 
-        // }
-    let a = document.createElement('a');
-    a.href = url;
-    a.textContent = p.title; 
-    a.classList.toggle(
+  let url = p.url;
+  if (!ARE_WE_HOME && !url.startsWith('http')) {
+    url = '../' + url;
+  }
+
+  let a = document.createElement('a');
+  a.href = url;
+  a.textContent = p.title; 
+  a.classList.toggle(
     'current',
     a.host === location.host && a.pathname === location.pathname
-    );
-    a.target = a.host !== location.host ? '_blank' : '';
-    nav.append(a);
+  );
+  a.target = a.host !== location.host ? '_blank' : '';
+  nav.append(a);
 }
 
 document.body.insertAdjacentHTML(
