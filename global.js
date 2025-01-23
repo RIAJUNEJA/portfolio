@@ -18,20 +18,20 @@ document.body.prepend(nav);
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 for (let p of pages) {
-  let url = p.url;
-//   url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
-    if (!ARE_WE_HOME && !url.startsWith('http')) {
-        url = '../' + url; 
-    }
-  let a = document.createElement('a');
-  a.href = url;
-  a.textContent = p.title; 
-  a.classList.toggle(
+    let url = p.url;
+    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
+        // if (!ARE_WE_HOME && !url.startsWith('http')) {
+        //     url = '../' + url; 
+        // }
+    let a = document.createElement('a');
+    a.href = url;
+    a.textContent = p.title; 
+    a.classList.toggle(
     'current',
     a.host === location.host && a.pathname === location.pathname
-  );
-  a.target = a.host !== location.host ? '_blank' : '';
-  nav.append(a);
+    );
+    a.target = a.host !== location.host ? '_blank' : '';
+    nav.append(a);
 }
 
 document.body.insertAdjacentHTML(
