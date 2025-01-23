@@ -3,6 +3,8 @@ body {
     font: 100%/1.5 system-ui;
     margin-inline: max(1em, (100% - 100ch) / 2);
     padding: 1em;
+    color: canvastext; 
+    background-color: canvas; 
 }
 
 nav ul {
@@ -17,6 +19,9 @@ nav {
     display: flex;
     margin-bottom: 1em;
     border-bottom: 1px solid #d3d3d3; 
+    --border-color: oklch(50% 10% 200 / 40%);
+    border-bottom-color: var(--border-color);
+    box-shadow: 0 4px 6px color-mix(in oklch, black, canvas 20%);
 }
 
 nav a {
@@ -42,6 +47,7 @@ html {
 
 nav a:hover {
     border-bottom: 0.4em solid var(--color-accent);
+    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 input, textarea, button {
@@ -113,5 +119,22 @@ nav a.current {
     font-weight: bold;
     color: red;
     text-decoration: underline;
-  }
+}
+:root {
+    color-scheme: light dark;
+}
+a {
+    color: var(--color-accent);
+}
+.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 80%; 
+    font-family: inherit; 
+}
+  
+.color-scheme select {
+    font-family: inherit; 
+}
   
