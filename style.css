@@ -109,3 +109,9 @@ img {
     max-width: 100ch;
     padding: 1em;
 }
+nav a.current {
+    font-weight: bold;
+    color: red;
+    text-decoration: underline;
+  }
+  
