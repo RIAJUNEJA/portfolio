@@ -1,0 +1,50 @@
+[
+    {
+        "title": "FinTech Security and Regulation",
+        "year": "2024",
+        "image": "https://via.placeholder.com/150",
+        "description": "Completed a project on FinTech security and regulatory frameworks, analyzing how emerging technologies shape financial security."
+    },
+    {
+        "title": "Cryptocurrency and Blockchain Fundamentals",
+        "year": "2024",
+        "image": "https://via.placeholder.com/150",
+        "description": "Developed a research project on digital currencies and blockchain technology, exploring use cases and regulatory challenges."
+    },
+    {
+        "title": "Data Science with R",
+        "year": "2023",
+        "image": "https://via.placeholder.com/150",
+        "description": "Implemented probability and data analysis techniques using R, completing statistical modeling and visualization projects."
+    },
+    {
+        "title": "Code-Free Data Science",
+        "year": "2023",
+        "image": "https://via.placeholder.com/150",
+        "description": "Worked on hands-on data analysis projects using a no-code approach, leveraging modern data science tools."
+    },
+    {
+        "title": "Programming Foundations with JavaScript, HTML, and CSS",
+        "year": "2023",
+        "image": "https://via.placeholder.com/150",
+        "description": "Developed foundational web development projects using JavaScript, HTML, and CSS."
+    },
+    {
+        "title": "Tritons Community Programming Leadership",
+        "year": "2022 - Present",
+        "image": "https://via.placeholder.com/150",
+        "description": "Led student volunteers to organize campus events, fostering a sense of community and inclusivity at UCSD."
+    },
+    {
+        "title": "SFHS Model United Nations - Chief of Staff",
+        "year": "2020-2021",
+        "image": "https://via.placeholder.com/150",
+        "description": "Managed the logistics and operations of a large-scale Model UN event, training students in diplomacy and debate."
+    },
+    {
+        "title": "AIESEC Volunteering",
+        "year": "2019-2020",
+        "image": "https://via.placeholder.com/150",
+        "description": "Participated in AIESEC's global volunteer program, contributing to social impact initiatives."
+    }
+]
