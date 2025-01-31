@@ -1,50 +1,62 @@
 [
     {
-        "title": "FinTech Security and Regulation",
+        "title": "FinTech Security and Regulatory Frameworks",
         "year": "2024",
-        "image": "https://via.placeholder.com/150",
-        "description": "Completed a project on FinTech security and regulatory frameworks, analyzing how emerging technologies shape financial security."
+        "description": "Conducted an in-depth analysis of financial technology security and regulatory frameworks, exploring the impact of emerging technologies on financial security and compliance."
     },
     {
-        "title": "Cryptocurrency and Blockchain Fundamentals",
+        "title": "Cryptocurrency and Blockchain Research",
         "year": "2024",
-        "image": "https://via.placeholder.com/150",
-        "description": "Developed a research project on digital currencies and blockchain technology, exploring use cases and regulatory challenges."
+        "description": "Investigated digital currencies and blockchain technology, examining their real-world applications, challenges, and evolving regulatory landscapes."
     },
     {
-        "title": "Data Science with R",
+        "title": "Data Science Applications with R",
         "year": "2023",
-        "image": "https://via.placeholder.com/150",
-        "description": "Implemented probability and data analysis techniques using R, completing statistical modeling and visualization projects."
+        "description": "Applied statistical modeling and probability analysis using R to derive insights from complex datasets, focusing on data visualization and inference techniques."
     },
     {
-        "title": "Code-Free Data Science",
+        "title": "No-Code Data Science Projects",
         "year": "2023",
-        "image": "https://via.placeholder.com/150",
-        "description": "Worked on hands-on data analysis projects using a no-code approach, leveraging modern data science tools."
+        "description": "Designed and executed data analysis projects using modern no-code tools, demonstrating proficiency in data-driven decision-making without traditional programming."
     },
     {
-        "title": "Programming Foundations with JavaScript, HTML, and CSS",
+        "title": "Web Development Foundations",
         "year": "2023",
-        "image": "https://via.placeholder.com/150",
-        "description": "Developed foundational web development projects using JavaScript, HTML, and CSS."
+        "description": "Built foundational web projects using JavaScript, HTML, and CSS, emphasizing front-end development principles and interactive design."
     },
     {
         "title": "Tritons Community Programming Leadership",
         "year": "2022 - Present",
-        "image": "https://via.placeholder.com/150",
-        "description": "Led student volunteers to organize campus events, fostering a sense of community and inclusivity at UCSD."
+        "description": "Led student volunteers in organizing campus-wide events, fostering an inclusive and engaging community environment at UC San Diego."
     },
     {
         "title": "SFHS Model United Nations - Chief of Staff",
         "year": "2020-2021",
-        "image": "https://via.placeholder.com/150",
-        "description": "Managed the logistics and operations of a large-scale Model UN event, training students in diplomacy and debate."
+        "description": "Oversaw logistics and operations for a large-scale Model UN event, mentoring students in diplomacy, negotiation, and global policy discussions."
     },
     {
-        "title": "AIESEC Volunteering",
+        "title": "AIESEC Global Volunteer Program",
         "year": "2019-2020",
-        "image": "https://via.placeholder.com/150",
-        "description": "Participated in AIESEC's global volunteer program, contributing to social impact initiatives."
+        "description": "Contributed to international social impact initiatives through AIESEC, collaborating with global teams to address pressing societal challenges."
+    },
+    {
+        "title": "placeholder1",
+        "year": "2019-2020",
+        "description": "Contributed to international social impact initiatives through AIESEC, collaborating with global teams to address pressing societal challenges."
+    },
+    {
+        "title": "placeholder2",
+        "year": "2018-2020",
+        "description": "Contributed to international social impact initiatives through AIESEC, collaborating with global teams to address pressing societal challenges."
+    },
+    {
+        "title": "placeholder3",
+        "year": "2019-2020",
+        "description": "Contributed to international social impact initiatives through AIESEC, collaborating with global teams to address pressing societal challenges."
+    },
+    {
+        "title": "placeholder4",
+        "year": "2017-2018",
+        "description": "Contributed to international social impact initiatives through AIESEC, collaborating with global teams to address pressing societal challenges."
     }
 ]
