@@ -2,6 +2,11 @@ let commits = [];
 const width = 1000;
 const height = 600;
 let xScale, yScale;
+let selectedCommits = [];
+let commitProgress = 100;
+let timeScale = d3.scaleTime([d3.min(commits, d => d.datetime), d3.max(commits, d => d.datetime)], [0, 100]);
+let commitMaxTime = timeScale.invert(commitProgress);
+
 
 async function loadData() {
     // Load the CSV data and process it
@@ -16,9 +21,26 @@ async function loadData() {
 
     //   processCommits();
     displayStats(); 
-//   createScatterplot()
+    timeScale = d3.scaleTime()
+        .domain([d3.min(commits, d => d.datetime), d3.max(commits, d => d.datetime)])
+        .range([0, 100]);
+    commitMaxTime = timeScale.invert(commitProgress);
+    updateSelectedTime();
+    const commitSlider = document.getElementById('commitSlider');
+    if (commitSlider) {
+        commitSlider.addEventListener('input', (evt) => {
+            commitProgress = +evt.target.value;  
+            updateSelectedTime();
+        });
+    }
 }
 
+
+function updateSelectedTime() {
+    commitMaxTime = timeScale.invert(commitProgress);
+    const selectedTimeEl = d3.select('#selectedTime');
+    selectedTimeEl.text(commitMaxTime.toLocaleString(undefined, { dateStyle: "long", timeStyle: "short" }));
+}
 function displayStats() {
     // Process commits first
     processCommits();
@@ -127,13 +149,15 @@ function createScatterplot(){
         .attr('r', (d) => rScale(d.totalLines))
         .style('fill-opacity', 0.7) // Add transparency for overlapping dots
         .on('mouseenter', function (event, d) {
+            d3.select(event.currentTarget).classed('selected', isCommitSelected(d));
             d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
             // ... existing hover handlers
             updateTooltipContent(d);
             updateTooltipVisibility(true);
             updateTooltipPosition(event);
         })
-        .on('mouseleave', function (event) {
+        .on('mouseleave', function (event,d) {
+            d3.select(event.currentTarget).classed('selected', isCommitSelected(d));
             d3.select(event.currentTarget).style('fill-opacity', 0.7); // Restore transparency
             // ... existing leave handlers
             updateTooltipContent({}); // Clear tooltip content
@@ -226,30 +250,39 @@ function updateTooltipPosition(event) {
 
 let brushSelection = null;
 
-function brushed(event) {
-    brushSelection = event.selection;
-    updateSelection();
-    updateSelectionCount();
-    updateLanguageBreakdown();
-    console.log(brushSelection);
+function brushed(evt) {
+    let brushSelection = evt.selection;
+    selectedCommits = !brushSelection
+      ? []
+      : commits.filter((commit) => {
+          let min = { x: brushSelection[0][0], y: brushSelection[0][1] };
+          let max = { x: brushSelection[1][0], y: brushSelection[1][1] };
+          let x = xScale(commit.date);
+          let y = yScale(commit.hourFrac);
+  
+          return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+        });
 }
 
+// function isCommitSelected(commit) {
+//     if (!brushSelection) 
+//         return false; 
+//     const min = { x: brushSelection[0][0], y: brushSelection[0][1] };
+//     const max = { x: brushSelection[1][0], y: brushSelection[1][1] }; 
+//     // const xScale = d3
+//     //     .scaleTime()
+//     //     .domain(d3.extent(commits, (d) => d.datetime))
+//     //     .range([0, width])
+//     //     .nice();
+
+//     // const yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
+
+//     const x = xScale(commit.date); 
+//     const y = yScale(commit.hourFrac); 
+//     return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+// }
 function isCommitSelected(commit) {
-    if (!brushSelection) 
-        return false; 
-    const min = { x: brushSelection[0][0], y: brushSelection[0][1] };
-    const max = { x: brushSelection[1][0], y: brushSelection[1][1] }; 
-    // const xScale = d3
-    //     .scaleTime()
-    //     .domain(d3.extent(commits, (d) => d.datetime))
-    //     .range([0, width])
-    //     .nice();
-
-    // const yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
-
-    const x = xScale(commit.date); 
-    const y = yScale(commit.hourFrac); 
-    return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+    return selectedCommits.includes(commit);
 }
 
 function updateSelection() {
